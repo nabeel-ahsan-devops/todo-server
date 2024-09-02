@@ -3,13 +3,11 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TodoModule } from './todo/todo.module';
 import { MongooseModule } from '@nestjs/mongoose';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
-    TodoModule,
-    MongooseModule.forRoot(
-      'mongodb+srv://nabeelahsan71:onepiece86%3F@counterapp.afzms.mongodb.net/todo',
-    ),
+    ConfigModule.forRoot(),
   ],
   controllers: [AppController],
   providers: [AppService],
