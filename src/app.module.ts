@@ -8,7 +8,7 @@ import { ConfigModule } from '@nestjs/config';
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    MongooseModule.forRoot(process.env.MONGODB_URL + '/todo'),
+    MongooseModule.forRoot(process.env.MONGODB_URL + 'todo'),
     TodoModule,
   ],
   controllers: [AppController],
