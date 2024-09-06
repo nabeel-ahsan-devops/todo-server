@@ -8,14 +8,14 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    // MongooseModule.forRootAsync({
-    //   imports: [ConfigModule],
-    //   inject: [ConfigService],
-    //   useFactory: (configService: ConfigService) => ({
-    //     uri: configService.get<string>('MONGODB_URL') + 'todo',
-    //   }),
-    // }),
-    // TodoModule,
+    MongooseModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: (configService: ConfigService) => ({
+        uri: configService.get<string>('MONGODB_URL') + 'todo',
+      }),
+    }),
+    TodoModule,
   ],
   controllers: [AppController],
   providers: [AppService],
