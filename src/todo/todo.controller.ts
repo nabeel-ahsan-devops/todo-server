@@ -8,8 +8,8 @@ import {
   Post,
 } from '@nestjs/common';
 import { TodoService } from './todo.service';
-import { Todo } from 'src/schemas/user.schema';
-import { CreateTodoDto } from 'src/dto/CreateTodoDto';
+import { Todo } from '../schemas/user.schema';
+import { CreateTodoDto } from '../dto/CreateTodoDto';
 
 @Controller('todo')
 export class TodoController {
